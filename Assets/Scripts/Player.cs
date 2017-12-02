@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
     public static Player Instance;
+     Character _carried;
 	// Use this for initialization
     void Awake()
     {
@@ -12,7 +13,26 @@ public class Player : MonoBehaviour {
 
     public void Recruit(Recruitable person)
     {
+        if (_carried != null) return;
         person.transform.parent = transform;
-        person.transform.localPosition = Vector2.one*0.5f;
-    }	
+        person.transform.localPosition = Vector2.up;
+        person.transform.localEulerAngles = new Vector3(0, 0, 90);
+        person.SortOrderOffset = 2;
+        foreach(Collider2D c in person.transform.GetComponents<Collider2D>())
+        {
+            c.enabled = false;
+        }
+        person.GetRigidbody().Sleep();
+        _carried = person;
+    }
+    public void PutDownCarried(TeamArea dest)
+    {
+        if (_carried != null)
+        {
+            if (dest.AddPerson(_carried))
+            {
+                _carried = null;
+            }
+        }
+    }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
-    public PlayerMovement Target;
+    public Character Target;
     public bool FocusOnTarget = false;
     public Vector2 FocusPoint = Vector2.zero;
     Vector2 _camTarget;

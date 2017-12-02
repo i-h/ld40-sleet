@@ -6,42 +6,27 @@ using UnityEngine.UI;
 
 public class Recruitable : Character, Interactable {
     bool _available = true;
-    public RectTransform RecruitDialog;
-    public void OnTouch(Touch t)
+    public Dialog RecruitDialog;
+    public void OnTouch(Touch t, Character actor)
+    {
+        GetRecruited(Player.Instance);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        GetRecruited(Player.Instance);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GetRecruited(Player.Instance);
+    }
+    public void GetRecruited(Player plr)
     {
         if (!_available) return;
-        if(RecruitDialog != null && !RecruitDialog.gameObject.activeSelf)
-        {
-            RecruitDialog.gameObject.SetActive(true);
-            Button[] buttons = RecruitDialog.GetComponentsInChildren<Button>();
-            foreach(Button btn in buttons)
-            {
-                btn.onClick.RemoveAllListeners();
-                switch (btn.tag) {
-                    case "YesButton":
-                            btn.onClick.AddListener(RecruitSuccess);
-                        break;
-                    case "NoButton":
-                            btn.onClick.AddListener(RecruitFailure);
-                        break;
-                }
-            }
-        }
-
-
+        plr.Recruit(this);        
     }
 
-    public void RecruitSuccess()
+    public struct Stats
     {
-        Debug.Log("Recruit success");
-        RecruitDialog.gameObject.SetActive(false);
-        Player.Instance.Recruit(this);
-        _available = false;
-    }
 
-    public void RecruitFailure()
-    {
-        Debug.Log("Recruit Failure");
-        RecruitDialog.gameObject.SetActive(false);
     }
 }

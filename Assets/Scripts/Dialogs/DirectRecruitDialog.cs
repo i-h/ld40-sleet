@@ -2,6 +2,5 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Interactable {
-    void OnTouch(Touch t, Character actor);
+public class DirectRecruitDialog : Dialog {
 }
