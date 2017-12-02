@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour {
     [SerializeField]
     private float _moveSpeed = 2f;
     private Vector2 _targetPosition;
     private Vector2 _distance;
+    private Rigidbody2D _rb;
 	// Use this for initialization
-	void Start () {
-		
+	void Awake () {
+        _rb = GetComponent<Rigidbody2D>();
+        _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 	}
 	
 	// Update is called once per frame
@@ -21,26 +24,30 @@ public class PlayerMovement : MonoBehaviour {
         {
             ReadInput(Input.touches);
         }
-
-        /*
-         * Moving towards target
-         */
+        MoveTowardsTarget();
+	}
+    
+    // Move towards the target position
+    void MoveTowardsTarget()
+    {
         Vector2 posNow = transform.position;
-        if(posNow != _targetPosition)
+        if (posNow != _targetPosition)
         {
             _distance = posNow - _targetPosition;
-            transform.position = Vector2.MoveTowards(posNow, _targetPosition, _moveSpeed*(Random.value/2+0.5f)/20);
-        } else
+            _rb.MovePosition(Vector2.MoveTowards(posNow, _targetPosition, _moveSpeed * (Random.value / 2 + 0.5f) / 20));
+            
+
+        }
+        else
         {
         }
-	}
+    }
 
     void ReadInput(Touch[] touches)
     {
         // Main touch
         Touch t = touches[0];
         _targetPosition = Camera.main.ScreenToWorldPoint(t.position);
-
 
         // Other touches
         if (touches.Length > 1)
