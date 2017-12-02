@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Recruitable : Character, Interactable {
-    bool _available = true;
+    public bool Available = true;
     public Dialog RecruitDialog;
     public void OnTouch(Touch t, Character actor)
     {
@@ -13,15 +13,15 @@ public class Recruitable : Character, Interactable {
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        GetRecruited(Player.Instance);
+        if(other.tag == "Player") GetRecruited(Player.Instance);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GetRecruited(Player.Instance);
+        if (collision.collider.tag == "Player") GetRecruited(Player.Instance);
     }
     public void GetRecruited(Player plr)
     {
-        if (!_available) return;
+        if (!Available) return;
         plr.Recruit(this);        
     }
 

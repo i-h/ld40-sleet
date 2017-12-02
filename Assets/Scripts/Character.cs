@@ -8,8 +8,7 @@ public class Character : MonoBehaviour, IFollowable
     public bool IsNPC = true;
     public int SortOrderOffset = 0;
     public enum MovePhase { Idle, Moving, Stalled }
-    [SerializeField]
-    private float _moveSpeed = 2f;
+    public float MoveSpeed = 2f;
     private Vector2 _targetPosition;
     private Vector2 _distance;
     private Rigidbody2D _rb;
@@ -17,6 +16,7 @@ public class Character : MonoBehaviour, IFollowable
     private float _stallThreshold = 0.1f;
     [SerializeField]
     private MovePhase _moving = MovePhase.Idle;
+    private bool _movementDisabled;
 
     SpriteRenderer _r;
     Transform _t;
@@ -31,7 +31,11 @@ public class Character : MonoBehaviour, IFollowable
 	
 	// Update is called once per frame
 	void Update () {
-        MoveTowardsTarget();
+        if (!_movementDisabled)
+        {
+            MoveTowardsTarget();
+        }
+        _rb.velocity = Vector2.zero;
     }
     private void LateUpdate()
     {
@@ -70,7 +74,7 @@ public class Character : MonoBehaviour, IFollowable
                     }
 
                     _distance = posNow - _targetPosition;
-                    _rb.MovePosition(Vector2.MoveTowards(posNow, _targetPosition, _moveSpeed / 20));
+                    _rb.MovePosition(Vector2.MoveTowards(posNow, _targetPosition, MoveSpeed / 20));
                 }
                 else
                 {
@@ -90,10 +94,15 @@ public class Character : MonoBehaviour, IFollowable
 
         _lastPosition = posNow;
     }
+    public void DisableMovement()
+    {
+        _movementDisabled = true;
+        _rb.isKinematic = true;
+    }
     public void SetNPC(bool isNPC)
     {
         IsNPC = isNPC;
-        _rb.isKinematic = isNPC;
+        //if(isNPC) _rb.gravityScale = 0;
     }
     public bool GetFocusOn()
     {
@@ -114,5 +123,13 @@ public class Character : MonoBehaviour, IFollowable
     public Vector2 GetCurrentPosition()
     {
         return transform.position;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.tag == "Walls")
+        {
+            SetTarget(transform.position);
+        }
     }
 }

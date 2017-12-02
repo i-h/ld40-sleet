@@ -14,6 +14,14 @@ public class Player : MonoBehaviour {
     public void Recruit(Recruitable person)
     {
         if (_carried != null) return;
+        person.Available = false;
+        WanderAI wander = person.GetComponent<WanderAI>();
+        if(wander != null)
+        {
+            wander.enabled = false;
+        }
+        person.DisableMovement();
+        person.CancelInvoke();
         person.transform.parent = transform;
         person.transform.localPosition = Vector2.up;
         person.transform.localEulerAngles = new Vector3(0, 0, 90);
