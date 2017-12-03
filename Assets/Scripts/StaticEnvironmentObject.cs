@@ -12,7 +12,8 @@ public class StaticEnvironmentObject : MonoBehaviour {
     }
     public void UpdateDepth()
     {
-        GetR().sortingOrder = (int)-(transform.position.y * 2) + DepthOffset;
+        GetR().sortingOrder = LayerOrderer.GetLayerOrder(transform.position.y, DepthOffset);
+        //transform.position = LayerOrderer.SortTransform(transform, DepthOffset);
     }
     SpriteRenderer GetR()
     {

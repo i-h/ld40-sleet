@@ -9,7 +9,14 @@ public class MissionManager : MonoBehaviour {
     Dictionary<TeamArea, bool> TeamList = new Dictionary<TeamArea, bool>();
 	// Use this for initialization
 	void Awake () {
-        Instance = this;
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else
+        {
+            Destroy(gameObject);
+        }
 	}
 	
 	// Update is called once per frame

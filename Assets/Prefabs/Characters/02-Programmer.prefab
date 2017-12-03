@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61531293171245058}
   - component: {fileID: 114950905661383858}
   - component: {fileID: 50661121130616688}
+  - component: {fileID: 114915000909236642}
   - component: {fileID: 114354846559444808}
   - component: {fileID: 61954673654402276}
   m_Layer: 0
@@ -129,6 +130,21 @@ MonoBehaviour:
   WanderFreq: 3
   WanderRand: 2
   WanderRange: 0.2
+--- !u!114 &114915000909236642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1464302692214502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8482119be91c493448ab3c8d6fc5230e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortOffset: -0.5
+  SortableRenderer: {fileID: 0}
+  SortableTransform: {fileID: 0}
+  AsChild: 0
 --- !u!114 &114950905661383858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsNPC: 1
-  SortOrderOffset: -1
+  SortOrderOffset: 0
   MoveSpeed: 2
   _moving: 0
   Available: 1
@@ -185,7 +201,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1000832041
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: bcfba081cdfd7cf4ba74047f1149834b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

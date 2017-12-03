@@ -17,13 +17,9 @@ public class Character : MonoBehaviour, IFollowable
     [SerializeField]
     private MovePhase _moving = MovePhase.Idle;
     private bool _movementDisabled;
-
-    SpriteRenderer _r;
-    Transform _t;
+    
 	// Use this for initialization
 	void Awake() {
-        _r = GetComponent<SpriteRenderer>();
-        _t = GetComponent<Transform>();
         _rb = GetComponent<Rigidbody2D>();
         _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         SetNPC(IsNPC);
@@ -39,7 +35,6 @@ public class Character : MonoBehaviour, IFollowable
     }
     private void LateUpdate()
     {
-        _r.sortingOrder = (int)-(_t.position.y*2)+SortOrderOffset;
     }
     public Rigidbody2D GetRigidbody()
     {
@@ -111,7 +106,7 @@ public class Character : MonoBehaviour, IFollowable
 
     public Vector2 GetMoveTarget()
     {
-        if (_targetPosition == null || _targetPosition == Vector2.zero)
+        if (_targetPosition == Vector2.zero)
         {
             return transform.position;
         }

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61017253600508754}
   - component: {fileID: 114514085539558410}
   - component: {fileID: 50216094638337264}
+  - component: {fileID: 114865830335041748}
   - component: {fileID: 114488501657817142}
   - component: {fileID: 61946565426694270}
   m_Layer: 0
@@ -141,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsNPC: 1
-  SortOrderOffset: -1
+  SortOrderOffset: 0
   MoveSpeed: 2
   _moving: 0
   Available: 1
@@ -152,6 +153,21 @@ MonoBehaviour:
     SoundDesign: 0
     Social: 255
     Leadership: 0
+--- !u!114 &114865830335041748
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1131205898632092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8482119be91c493448ab3c8d6fc5230e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortOffset: -0.5
+  SortableRenderer: {fileID: 0}
+  SortableTransform: {fileID: 0}
+  AsChild: 0
 --- !u!212 &212021878662492828
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -185,7 +201,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1000832041
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300008, guid: bcfba081cdfd7cf4ba74047f1149834b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

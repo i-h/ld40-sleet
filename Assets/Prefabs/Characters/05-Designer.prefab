@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61970900353636924}
   - component: {fileID: 114568986950303036}
   - component: {fileID: 50823119174484298}
+  - component: {fileID: 114974759945711462}
   - component: {fileID: 114275365653757350}
   - component: {fileID: 61528369243860440}
   m_Layer: 0
@@ -152,6 +153,21 @@ MonoBehaviour:
     SoundDesign: 0
     Social: 255
     Leadership: 0
+--- !u!114 &114974759945711462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1625863256399592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8482119be91c493448ab3c8d6fc5230e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortOffset: -0.5
+  SortableRenderer: {fileID: 0}
+  SortableTransform: {fileID: 0}
+  AsChild: 0
 --- !u!212 &212206870952521820
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -183,9 +199,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1681365583
-  m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingLayerID: 1000832041
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: bcfba081cdfd7cf4ba74047f1149834b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
