@@ -29,7 +29,7 @@ public class WanderAI : MonoBehaviour {
 
     private void OnDrawGizmos()
     {
-        if (_originalPosition == null)
+        if (Application.isEditor)
         {
             Gizmos.DrawWireSphere(transform.position, WanderRange);
         } else

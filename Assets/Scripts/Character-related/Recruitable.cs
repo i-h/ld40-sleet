@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Recruitable : Character, Interactable {
     public bool Available = true;
-    public Dialog RecruitDialog;
+    public Stats Attributes = new Stats();
     public void OnTouch(Touch t, Character actor)
     {
         GetRecruited(Player.Instance);
@@ -25,8 +25,14 @@ public class Recruitable : Character, Interactable {
         plr.Recruit(this);        
     }
 
+    [Serializable]
     public struct Stats
     {
-
+        public byte Programming;
+        public byte GraphicDesign;
+        public byte GameDesign;
+        public byte SoundDesign;
+        public byte Social;
+        public byte Leadership;
     }
 }

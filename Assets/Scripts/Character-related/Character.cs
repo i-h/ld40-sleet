@@ -39,7 +39,7 @@ public class Character : MonoBehaviour, IFollowable
     }
     private void LateUpdate()
     {
-        _r.sortingOrder = (int)-_t.position.y*2+SortOrderOffset;
+        _r.sortingOrder = (int)-(_t.position.y*2)+SortOrderOffset;
     }
     public Rigidbody2D GetRigidbody()
     {

@@ -21,10 +21,10 @@ public class CameraFollow : MonoBehaviour {
 
         FocusPoint = Target.GetMoveTarget();
 
-        if (!Target.GetFocusOn())
+        if (!Target.GetFocusOn() && !FocusOnTarget)
         {
-            _camTarget.x = FocusPoint.x;//(FocusPoint.x + tgtPos.x) / 2;
-            _camTarget.y = FocusPoint.y;//(FocusPoint.y + tgtPos.y) / 2;
+            _camTarget.x = (FocusPoint.x*2 + tgtPos.x) / 3;
+            _camTarget.y = (FocusPoint.y*2 + tgtPos.y) / 3;
         } else
         {
             FocusPoint = tgtPos;

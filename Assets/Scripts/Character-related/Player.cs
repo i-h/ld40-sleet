@@ -5,15 +5,18 @@ using UnityEngine;
 public class Player : MonoBehaviour {
     public static Player Instance;
      Character _carried;
+    Animator _anim;
 	// Use this for initialization
     void Awake()
     {
         Instance = this;
+        _anim = GetComponent<Animator>();
     }
 
     public void Recruit(Recruitable person)
     {
         if (_carried != null) return;
+        _anim.SetBool("IsCarrying", true);
         person.Available = false;
         WanderAI wander = person.GetComponent<WanderAI>();
         if(wander != null)
@@ -40,6 +43,7 @@ public class Player : MonoBehaviour {
             if (dest.AddPerson(_carried))
             {
                 _carried = null;
+                _anim.SetBool("IsCarrying", false);
             }
         }
     }
