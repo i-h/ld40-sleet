@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464302692214502}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.18, y: 8.01, z: 0}
+  m_LocalPosition: {x: 11, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,7 +81,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1757812, y: 2.3320312}
+    oldSize: {x: 1.1757812, y: 2.5078125}
     newSize: {x: 1.2304688, y: 2.1171875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -106,7 +106,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1757812, y: 2.3320312}
+    oldSize: {x: 1.1757812, y: 2.5078125}
     newSize: {x: 1.2304688, y: 2.1171875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsNPC: 1
-  SortOrderOffset: 0
+  SortOrderOffset: -1
   MoveSpeed: 2
   _moving: 0
   Available: 1
@@ -151,6 +151,7 @@ MonoBehaviour:
     GameDesign: 0
     SoundDesign: 0
     Social: 0
+    Leadership: 0
 --- !u!212 &212620235870103718
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -182,10 +183,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1681365583
-  m_SortingLayer: 2
+  m_SortingLayerID: 1000832041
+  m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300010, guid: 5f441cafe83120b45b4a4d8e5dee9254, type: 3}
+  m_Sprite: {fileID: 21300010, guid: bcfba081cdfd7cf4ba74047f1149834b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

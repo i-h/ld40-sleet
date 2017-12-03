@@ -78,3 +78,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  AlphaCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  CenterToScreen: 1
+  Effect: 0
+  EffectDuration: 1
+  MainColor: {r: 0, g: 0, b: 0, a: 0}
+  DeleteAfter: -1
+  OrderInLayer: 1

@@ -289,11 +289,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114749595749595138, guid: 6ddbba22583262c48afa2c00c50e9d4c,
-        type: 2}
-      propertyPath: MoveSpeed
-      value: 1.2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ddbba22583262c48afa2c00c50e9d4c, type: 2}
   m_IsPrefabParent: 0
@@ -988,21 +983,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 212021878662492828, guid: 015d98927e5b23c49814bffa539bbfd2,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: 1000832041
-      objectReference: {fileID: 0}
-    - target: {fileID: 212021878662492828, guid: 015d98927e5b23c49814bffa539bbfd2,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114514085539558410, guid: 015d98927e5b23c49814bffa539bbfd2,
-        type: 2}
-      propertyPath: SortOrderOffset
-      value: -1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 015d98927e5b23c49814bffa539bbfd2, type: 2}
   m_IsPrefabParent: 0
@@ -1044,21 +1024,6 @@ Prefab:
     - target: {fileID: 4187309707351134, guid: 013aeb7fb9a72b34a9733cc6d00c991f, type: 2}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 212620235870103718, guid: 013aeb7fb9a72b34a9733cc6d00c991f,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: 1000832041
-      objectReference: {fileID: 0}
-    - target: {fileID: 212620235870103718, guid: 013aeb7fb9a72b34a9733cc6d00c991f,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114950905661383858, guid: 013aeb7fb9a72b34a9733cc6d00c991f,
-        type: 2}
-      propertyPath: SortOrderOffset
-      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 013aeb7fb9a72b34a9733cc6d00c991f, type: 2}
@@ -1110,24 +1075,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: edfb32c5f9ce45b4b8fd8670afd2cca7, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1245728342 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1847553871308784, guid: 017d483dff014614c8b22420355fb4f9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1610821991}
---- !u!114 &1245728343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1245728342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 671ec2271fb0c9c4a89e9cf84ed7d67a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Completed: {fileID: 114016335459687088, guid: e08f1458f34d56d488da832a365bd4ec,
-    type: 2}
 --- !u!1 &1339738558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,34 +1248,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4038324403329608, guid: edfb32c5f9ce45b4b8fd8670afd2cca7,
     type: 2}
   m_PrefabInternal: {fileID: 1352280180}
---- !u!1 &1413594455 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1932992364025216, guid: 6ddbba22583262c48afa2c00c50e9d4c,
-    type: 2}
-  m_PrefabInternal: {fileID: 464524815}
 --- !u!114 &1413594456 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114749595749595138, guid: 6ddbba22583262c48afa2c00c50e9d4c,
     type: 2}
   m_PrefabInternal: {fileID: 464524815}
   m_Script: {fileID: 11500000, guid: fcae415aedf8c2a4db4ccb970cca284d, type: 3}
---- !u!95 &1413594457
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1413594455}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f3a9604faa340084d8b1a66b1c29cd9d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1520829575
 GameObject:
   m_ObjectHideFlags: 0

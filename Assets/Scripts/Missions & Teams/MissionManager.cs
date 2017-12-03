@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MissionManager : MonoBehaviour {
     public MissionCompleted Completed;
+    public MissionCompleted TeamCompleted;
     public static MissionManager Instance;
     Dictionary<TeamArea, bool> TeamList = new Dictionary<TeamArea, bool>();
 	// Use this for initialization
@@ -24,6 +25,8 @@ public class MissionManager : MonoBehaviour {
     public void TeamFinished(TeamArea team)
     {
         TeamList[team] = true;
+        if(TeamCompleted!=null)
+            Instantiate(TeamCompleted, team.transform.position, Quaternion.identity);
         if(CheckUnfinishedTeams() == 0)
         {
             AllTeamsFinished();
