@@ -17,12 +17,14 @@ public class Character : MonoBehaviour, IFollowable
     [SerializeField]
     private MovePhase _moving = MovePhase.Idle;
     private bool _movementDisabled;
+    private Animator _anim;
     
 	// Use this for initialization
 	void Awake() {
         _rb = GetComponent<Rigidbody2D>();
         _rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         SetNPC(IsNPC);
+        _anim = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -69,6 +71,10 @@ public class Character : MonoBehaviour, IFollowable
                     }
 
                     _distance = posNow - _targetPosition;
+                    if(_anim != null)
+                    {
+                        _anim.SetFloat("hSpeed", _distance.x);
+                    }
                     _rb.MovePosition(Vector2.MoveTowards(posNow, _targetPosition, MoveSpeed / 20));
                 }
                 else
@@ -85,6 +91,11 @@ public class Character : MonoBehaviour, IFollowable
             case MovePhase.Idle:
 
                 break;
+        }
+
+        if(_anim != null)
+        {
+            _anim.SetBool("Stopped", _moving == MovePhase.Idle);
         }
 
         _lastPosition = posNow;

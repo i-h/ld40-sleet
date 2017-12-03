@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b72efae3ed6c94cad2655f79b9ea0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionCompletedSprite: {fileID: 21300000, guid: 7149a0d0995f05849b3b5a98183c0215,
+  MissionCompletedSprite: {fileID: 21300000, guid: 4303738c194a6b3419a0596742410f18,
     type: 3}
-  targetScale: {x: 2, y: 2, z: 1}
+  targetScale: {x: 0.5, y: 0.5, z: 1}
   RevealCurve:
     serializedVersion: 2
     m_Curve:
@@ -120,3 +120,4 @@ MonoBehaviour:
   MainColor: {r: 1, g: 1, b: 0.53999996, a: 0}
   DeleteAfter: 1
   OrderInLayer: 0
+  TransferTo: 
