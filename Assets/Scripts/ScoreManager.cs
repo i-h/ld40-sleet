@@ -29,6 +29,9 @@ public class ScoreManager : MonoBehaviour {
     {
         _totalScore += completionScore;
         PlayerPrefs.SetInt("Score", _totalScore);
-        ScoreDisplay.text = "SCORE\n" + _totalScore;
+        if (ScoreDisplay != null)
+        {
+            ScoreDisplay.text = "SCORE\n" + _totalScore;
+        }
     }
 }

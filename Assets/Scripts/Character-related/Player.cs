@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,9 +45,12 @@ public class Player : MonoBehaviour {
         {
             if (dest.AddPerson(_carried))
             {
-                Recruitable person = _carried as Recruitable;
-                int voiceIndex = Random.Range(0, person.VoiceLines.Length);
-                SoundPlayer.Instance.PlaySound(person.VoiceLines[voiceIndex]);
+                try
+                {
+                    Recruitable person = _carried as Recruitable;
+                    int voiceIndex = UnityEngine.Random.Range(0, person.VoiceLines.Length);
+                    SoundPlayer.Instance.PlaySound(person.VoiceLines[voiceIndex]);
+                } catch (Exception e){}
 
                 _carried = null;
                 _anim.SetBool("IsCarrying", false);

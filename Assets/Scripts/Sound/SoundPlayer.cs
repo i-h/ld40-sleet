@@ -21,14 +21,16 @@ public class SoundPlayer : MonoBehaviour {
     void Start () {
         DontDestroyOnLoad(gameObject);
         //transform.parent = Camera.main.transform;
-        transform.localPosition = Vector2.zero;
+        //transform.localPosition = Vector2.zero;
 	}
 
     public void PlayBGM(AudioClip bgm)
     {
         if(_src.clip == null || _src.clip.name != bgm.name || !_src.isPlaying)
         {
+            _src.Stop();
             _src.clip = bgm;
+            _src.loop = true;
             _src.Play();
         }
     }
