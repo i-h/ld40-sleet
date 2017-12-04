@@ -17,4 +17,8 @@ public class SpawnArea : MonoBehaviour {
     {
         return (Vector2)transform.position + Random.insideUnitCircle * Radius;
     }
+    public static SpawnArea GetRandomArea()
+    {
+        return SpawnAreas[Random.Range(0, SpawnAreas.Count)];
+    }
 }

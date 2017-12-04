@@ -66,7 +66,7 @@ public class GameProduct : MonoBehaviour {
     float GetDevelopmentTime()
     {
         float leadership = _totalStats.Leadership;
-        float baseDuration = 10.0f;
+        float baseDuration = 20.0f;
         if(leadership > 255)
         {
             return baseDuration + baseDuration * (1 - 1 / 1+(leadership-255));

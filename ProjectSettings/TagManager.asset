@@ -10,6 +10,7 @@ TagManager:
   - Walls
   - WorldCanvas
   - ScreenCanvas
+  - ScoreText
   layers:
   - Default
   - TransparentFX

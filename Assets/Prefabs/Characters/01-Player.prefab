@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14039ca0f48f8884c85c8bc3a3d9510e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LiftSFX: {fileID: 8300000, guid: 05260bda3dbb828408b91d659787d68b, type: 3}
 --- !u!114 &114690093554135480
 MonoBehaviour:
   m_ObjectHideFlags: 1

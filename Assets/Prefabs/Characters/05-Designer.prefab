@@ -145,6 +145,19 @@ MonoBehaviour:
   SortOrderOffset: 0
   MoveSpeed: 2
   _moving: 0
+  VoiceLines:
+  - {fileID: 8300000, guid: 54b6953497efd8547ab09b2faf8394af, type: 3}
+  - {fileID: 8300000, guid: abc79891297649e428533147d81cf7c4, type: 3}
+  - {fileID: 8300000, guid: 353f01a2df451fa4a841eca92b356e5a, type: 3}
+  - {fileID: 8300000, guid: 038337e9cc3a9e548af802c0d1240d26, type: 3}
+  - {fileID: 8300000, guid: feaed09ecea03244586c56d08a294753, type: 3}
+  - {fileID: 8300000, guid: e7262684c23cdf441904825b8bc89afe, type: 3}
+  - {fileID: 8300000, guid: 13c3eef0b8dc61447a3c0b264314cb6c, type: 3}
+  - {fileID: 8300000, guid: 256a194111bf37d4aad20f65cb9eef7f, type: 3}
+  - {fileID: 8300000, guid: a1c56bd5912e0c043b9b9222dae44451, type: 3}
+  - {fileID: 8300000, guid: 8113634423e338f488f1a96aa18a65d7, type: 3}
+  - {fileID: 8300000, guid: d7e003a663189f44ab769b234ba48a06, type: 3}
+  - {fileID: 8300000, guid: b8884f0c59f808d4c8f412df106bd9ef, type: 3}
   Role: Game  Designer
   Available: 1
   Attributes:

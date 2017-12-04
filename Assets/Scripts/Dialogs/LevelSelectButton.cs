@@ -14,7 +14,8 @@ public class LevelSelectButton : SceneSelectButton {
 
     private void Start()
     {
-        SetLocked(Locked);
+        PlayerPrefs.SetInt("level1", 1);
+        SetLocked(PlayerPrefs.GetInt(Target, 0) == 0);
     }
 
     public void SetLocked(bool locked)
@@ -24,5 +25,10 @@ public class LevelSelectButton : SceneSelectButton {
         {
             _sr.color = LockColor;
         }
+    }
+
+    public override void Change()
+    {
+        if(!Locked) base.Change();
     }
 }

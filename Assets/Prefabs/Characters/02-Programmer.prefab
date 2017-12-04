@@ -160,6 +160,18 @@ MonoBehaviour:
   SortOrderOffset: 0
   MoveSpeed: 2
   _moving: 0
+  VoiceLines:
+  - {fileID: 8300000, guid: 2ff635985a29b4241b1feb1e0e0dcd42, type: 3}
+  - {fileID: 8300000, guid: ca50c6dfd77efa2468eb248c3e770d0e, type: 3}
+  - {fileID: 8300000, guid: cd5adbf76d191e54db82ad16b62b544d, type: 3}
+  - {fileID: 8300000, guid: 1f4b18f946a829c4785ebd4abdabd60c, type: 3}
+  - {fileID: 8300000, guid: ec06015c53e4e804ea15e1ecc8b93ddb, type: 3}
+  - {fileID: 8300000, guid: 5c56c3e87fa1e6643a7023a9fae71dfb, type: 3}
+  - {fileID: 8300000, guid: 106ef78c833207342820d66eef950578, type: 3}
+  - {fileID: 8300000, guid: d16e9443d1dfd71478477e6b222c0522, type: 3}
+  - {fileID: 8300000, guid: 79e7ace0ab481ab4ea34d238c6f15c97, type: 3}
+  - {fileID: 8300000, guid: 5fd762dc0ff17ac45b9d4b5779363043, type: 3}
+  - {fileID: 8300000, guid: c478f23fde09f194889e3d098bd9b506, type: 3}
   Role: Programmer
   Available: 1
   Attributes:

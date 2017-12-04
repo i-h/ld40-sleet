@@ -9,7 +9,7 @@ public class SceneSelectButton : MonoBehaviour {
     {
         GetComponent<Button>().onClick.AddListener(Change);
     }
-    public void Change()
+    public virtual void Change()
     {
         SceneManager.LoadScene(Target);
     }

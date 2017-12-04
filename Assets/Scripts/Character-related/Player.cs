@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
     public static Player Instance;
+    public AudioClip LiftSFX;
      Character _carried;
     Animator _anim;
 	// Use this for initialization
@@ -35,6 +36,7 @@ public class Player : MonoBehaviour {
         }
         person.GetRigidbody().Sleep();
         _carried = person;
+        SoundPlayer.Instance.PlaySound(LiftSFX);
     }
     public void PutDownCarried(Team dest)
     {
@@ -42,6 +44,10 @@ public class Player : MonoBehaviour {
         {
             if (dest.AddPerson(_carried))
             {
+                Recruitable person = _carried as Recruitable;
+                int voiceIndex = Random.Range(0, person.VoiceLines.Length);
+                SoundPlayer.Instance.PlaySound(person.VoiceLines[voiceIndex]);
+
                 _carried = null;
                 _anim.SetBool("IsCarrying", false);
             }

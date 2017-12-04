@@ -146,6 +146,19 @@ MonoBehaviour:
   SortOrderOffset: 0
   MoveSpeed: 2
   _moving: 0
+  VoiceLines:
+  - {fileID: 8300000, guid: 8b9a67904f36fed4eb2e4ec257c8695b, type: 3}
+  - {fileID: 8300000, guid: 70e7978c5c67ab540a4fe05d61d7a05f, type: 3}
+  - {fileID: 8300000, guid: d97669d08c9b17b4f8831526eb9c1fc4, type: 3}
+  - {fileID: 8300000, guid: c0592e88e6f71e244a122ad836c4fc81, type: 3}
+  - {fileID: 8300000, guid: 526cd18fb7dc63743a914098ddb3cdd9, type: 3}
+  - {fileID: 8300000, guid: 086c9a60d40fbad48975b370304c2e46, type: 3}
+  - {fileID: 8300000, guid: 54025ff9ec5f3234da91edf8c0925883, type: 3}
+  - {fileID: 8300000, guid: a051e31baaff29242bbacba4e4357168, type: 3}
+  - {fileID: 8300000, guid: 02398ac9b7e37a24e9b7545e51cf3cb9, type: 3}
+  - {fileID: 8300000, guid: 19c819924fbe9174284c5ecda4f9ecb0, type: 3}
+  - {fileID: 8300000, guid: 23d6a4f5eb1b98c4f8d157db4fa64b0d, type: 3}
+  - {fileID: 8300000, guid: a8653901c83238f41a9da5c622b93a8b, type: 3}
   Role: Sound Designer
   Available: 1
   Attributes:

@@ -145,6 +145,18 @@ MonoBehaviour:
   SortOrderOffset: 0
   MoveSpeed: 2
   _moving: 0
+  VoiceLines:
+  - {fileID: 8300000, guid: 80e132f951c13854c941e8c618c4e3b9, type: 3}
+  - {fileID: 8300000, guid: 382c0bdc9d5da91439540989e808dddf, type: 3}
+  - {fileID: 8300000, guid: 2be40f89a5ffec3498477319b13477a0, type: 3}
+  - {fileID: 8300000, guid: a44d934c19718e546a839dc13b45b379, type: 3}
+  - {fileID: 8300000, guid: 39fc8f2418deaae4dba0da008cad8bcd, type: 3}
+  - {fileID: 8300000, guid: 23849356af043794a8e02e970095fdc7, type: 3}
+  - {fileID: 8300000, guid: 4612d05eadb26d045a4322514f960e02, type: 3}
+  - {fileID: 8300000, guid: 320045fab22c7a2498d5ffacc43bfef2, type: 3}
+  - {fileID: 8300000, guid: fcb9657f1a9a1ac4bbeade719aafe8b4, type: 3}
+  - {fileID: 8300000, guid: 7e74f31e7cabff743887f51a07a9e5f0, type: 3}
+  - {fileID: 8300000, guid: 8da82ac7dde22e048a4eabb8dd76e655, type: 3}
   Role: Artist
   Available: 1
   Attributes:

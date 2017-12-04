@@ -14,13 +14,13 @@ public class TutorialManager : MonoBehaviour {
     private void Awake()
     {
         Instance = this;
-    }
-
-    void Start () {
-        for(int i = 0; i < Hints.Length; i++)
+        for (int i = 0; i < Hints.Length; i++)
         {
             _hints.Add(Hints[i].Key, Hints[i].Text);
-        }        
+        }
+    }
+
+    void Start () {   
 	}
 
     public void ShowHint(string hintKey)
@@ -30,10 +30,13 @@ public class TutorialManager : MonoBehaviour {
         if(screenCanvas != null)
         {
             _guideInstance = Instantiate(GuideUI, screenCanvas.transform);
-            Text guideText = _guideInstance.GetComponentInChildren<Text>();
-            if(guideText != null)
+            Text[] guideText = _guideInstance.GetComponentsInChildren<Text>();
+            foreach (Text txt in guideText)
             {
-                guideText.text = _hints[hintKey];
+                if (txt.name == "GuideText")
+                {
+                    txt.text = _hints[hintKey];
+                }
             }
 
             PlayerPrefs.SetInt(hintKey, 1);

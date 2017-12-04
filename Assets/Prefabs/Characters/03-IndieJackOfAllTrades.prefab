@@ -145,6 +145,18 @@ MonoBehaviour:
   SortOrderOffset: 0
   MoveSpeed: 2
   _moving: 0
+  VoiceLines:
+  - {fileID: 8300000, guid: 425891f7a07ee1344a152cfd68b3124d, type: 3}
+  - {fileID: 8300000, guid: ade4d02e794042b4fab9bb4ab9e3a0b5, type: 3}
+  - {fileID: 8300000, guid: 1ec2e39e4988b454daa034efbd0649c9, type: 3}
+  - {fileID: 8300000, guid: e7c7deece1f3b104d9b37c65c6a67a8d, type: 3}
+  - {fileID: 8300000, guid: 7b4569454776ab74a849ea312da70017, type: 3}
+  - {fileID: 8300000, guid: 1c8754f5bd899d44485f9fe5bac29c1d, type: 3}
+  - {fileID: 8300000, guid: af4ac9e94c33c8a4c89620a2e1983d88, type: 3}
+  - {fileID: 8300000, guid: 1bafcfc153827734683e3e64062436a7, type: 3}
+  - {fileID: 8300000, guid: 05d3b99c170a51649a97ecca1dc556b5, type: 3}
+  - {fileID: 8300000, guid: d0680c90e6264754788ed205671134ee, type: 3}
+  - {fileID: 8300000, guid: f4c6a6856d00bbc41b5129ab58abe353, type: 3}
   Role: Indie Developer
   Available: 1
   Attributes:

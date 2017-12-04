@@ -11,6 +11,7 @@ public class MissionManager : MonoBehaviour {
     public static MissionManager Instance;
     public int CompletionScore = 0;
     public string NextUnlock = "";
+    public AudioClip MissionCompletedJingle;
     Dictionary<Team, bool> TeamList = new Dictionary<Team, bool>();
 	// Use this for initialization
 	void Awake () {
@@ -103,7 +104,15 @@ public class MissionManager : MonoBehaviour {
                     PlayerPrefs.SetInt(NextUnlock, 1);
                     NextUnlock = "";
                 }
+                GameObject canv = GameObject.FindWithTag("WorldCanvas");
+                TeamInfoPanel[] panels = canv.GetComponentsInChildren<TeamInfoPanel>();
+                for(int i = 0; i < panels.Length; i++)
+                {
+                    Destroy(panels[i].gameObject);
+                }
                 Instantiate(Completed);
+                SoundPlayer.Instance.StopBGM();
+                SoundPlayer.Instance.PlaySound(MissionCompletedJingle);
             }
         }
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Recruitable : Character, Interactable {
+    public AudioClip[] VoiceLines;
     public string Role = "Developer";
     public bool Available = true;
     public Stats Attributes = new Stats();
@@ -23,7 +24,7 @@ public class Recruitable : Character, Interactable {
     public void GetRecruited(Player plr)
     {
         if (!Available) return;
-        plr.Recruit(this);        
+        plr.Recruit(this);
     }
 
 }
