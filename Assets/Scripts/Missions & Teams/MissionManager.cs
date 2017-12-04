@@ -9,6 +9,8 @@ public class MissionManager : MonoBehaviour {
     public MissionCompleted Completed;
     public MissionCompleted TeamCompleted;
     public static MissionManager Instance;
+    public int CompletionScore = 0;
+    public string NextUnlock = "";
     Dictionary<Team, bool> TeamList = new Dictionary<Team, bool>();
 	// Use this for initialization
 	void Awake () {
@@ -37,16 +39,33 @@ public class MissionManager : MonoBehaviour {
         TeamList[team] = true;
         if (TeamCompleted != null)
         {
-            Instantiate(TeamCompleted, team.transform.position, Quaternion.identity);
             if(GameMode == MissionMode.Endless)
             {
                 OnTeamFinishedEndless(team);
+            } else
+            {
+
+                Instantiate(TeamCompleted, team.transform.position, Quaternion.identity);
             }
         }
         if(CheckUnfinishedTeams() == 0)
         {
             AllTeamsFinished();
         }
+    }
+
+    int GetProjectScore(GameProduct p)
+    {
+        int score = 0;
+        score = (int)(2000 * p.Quality / 100.0f + 3000 * 1/(1+p.DevelopmentTime));
+        Debug.Log("Project " + p.name + " scored " + score);
+        return score;
+    }
+
+    internal void ProjectFinished(Team team, GameProduct project)
+    {
+        Instantiate(TeamCompleted, team.transform.position, Quaternion.identity);
+        ScoreManager.Instance.AddScore(GetProjectScore(project));
     }
 
     private void OnTeamFinishedEndless(Team team)
@@ -56,6 +75,7 @@ public class MissionManager : MonoBehaviour {
         pt.parent = transform;
         pt.name = "Generic Game Name";
         teamProduct.StartDevelopment(team, team.FinishProject);
+        team.InfoPanel.StartGameDevelopment(teamProduct);
     }
 
     int CheckUnfinishedTeams()
@@ -76,6 +96,13 @@ public class MissionManager : MonoBehaviour {
         {
             if (Completed != null)
             {
+                ScoreManager.Instance.AddScore(CompletionScore);
+                CompletionScore = 0;
+                if(NextUnlock != "")
+                {
+                    PlayerPrefs.SetInt(NextUnlock, 1);
+                    NextUnlock = "";
+                }
                 Instantiate(Completed);
             }
         }

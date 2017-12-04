@@ -356,6 +356,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TeamSlots: []
+  InfoPanelPrefab: {fileID: 114600184084187376, guid: ae00a347c7efc4c49b020366452ce168,
+    type: 2}
+  InfoPanel: {fileID: 0}
 --- !u!212 &212107492225801064
 SpriteRenderer:
   m_ObjectHideFlags: 1

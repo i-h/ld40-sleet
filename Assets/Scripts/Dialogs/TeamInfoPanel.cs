@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class TeamInfoPanel : MonoBehaviour {
     public enum DisplayM { Team, Game }
-    public DisplayM DisplayMode = DisplayM.Team;
+    DisplayM _displayMode = DisplayM.Team;
     public Team AttachedTeam;
     public bool Visible;
+    GameProduct _game;
     Text _txtBox;
     Image _bubble;
 	// Use this for initialization
@@ -17,7 +18,8 @@ public class TeamInfoPanel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (_displayMode == DisplayM.Game)
+            UpdateDisplay();
 	}
 
     void DisplayTeamInfo()
@@ -28,18 +30,28 @@ public class TeamInfoPanel : MonoBehaviour {
         {
             if(sl.Person == null)
             {
-                GetTxt().text += "<Open team slot>\n";
+                GetTxt().text += "Open team slot\n";
             } else
             {
-                GetTxt().text += sl.Person.name + "\n";
+                GetTxt().text += (sl.Person as Recruitable).Role + "\n";
             }
         }
     }
 
     void DisplayGameInfo()
     {
-        GetTxt().text = "";
+        GetTxt().text = "Developing...\n";
+        string pStr = "[";
+        int progressLength = 20;
+        int progress = (int)(_game.Progress * progressLength);
+        for(int i = 0; i < progressLength; i++)
+        {
+            if (i == progress) pStr += "|";
+            else pStr += " ";
+        }
+        pStr += "]";
 
+        GetTxt().text += pStr + "\nQuality: " + _game.Quality.ToString("00")+"%";
     }
 
     Text GetTxt()
@@ -50,15 +62,26 @@ public class TeamInfoPanel : MonoBehaviour {
         }
         return _txtBox;
     }
-
+    public void StartGameDevelopment(GameProduct g)
+    {
+        _game = g;
+        _displayMode = DisplayM.Game;
+        UpdateDisplay();
+    }
+    public void FinishDevelopment()
+    {
+        _displayMode = DisplayM.Team;
+        _game = null;
+        UpdateDisplay();
+    }
     public void Display()
     {
         GetTxt();
         transform.position = AttachedTeam.transform.position + Vector3.up;
-        if (DisplayMode == DisplayM.Team)
+        if (_displayMode == DisplayM.Team)
         {
             DisplayTeamInfo();
-        } else if (DisplayMode == DisplayM.Game)
+        } else if (_displayMode == DisplayM.Game)
         {
             DisplayGameInfo();
         }
@@ -66,11 +89,11 @@ public class TeamInfoPanel : MonoBehaviour {
     }
     public void UpdateDisplay()
     {
-        if (DisplayMode == DisplayM.Team)
+        if (_displayMode == DisplayM.Team)
         {
             DisplayTeamInfo();
         }
-        else if (DisplayMode == DisplayM.Game)
+        else if (_displayMode == DisplayM.Game)
         {
             DisplayGameInfo();
         }
@@ -86,11 +109,11 @@ public class TeamInfoPanel : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SetVisible(true);
+        if(collision.tag == "Player") SetVisible(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        SetVisible(false);
+        if(collision.tag == "Player") SetVisible(false);
     }
 }

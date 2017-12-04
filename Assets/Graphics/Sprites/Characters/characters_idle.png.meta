@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: fefeeb701ee9d804a81bbf589a48b13f
-timeCreated: 1512310777
+guid: bcfba081cdfd7cf4ba74047f1149834b
+timeCreated: 1512310592
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: characters_idle_0
-    21300002: characters_idle_1
-    21300004: characters_idle_2
-    21300006: characters_idle_3
-    21300008: characters_idle_4
-    21300010: characters_idle_5
+    21300000: characters_0
+    21300002: characters_1
+    21300004: characters_2
+    21300006: characters_3
+    21300008: characters_4
+    21300010: characters_5
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -93,13 +93,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: characters_idle_0
+      name: characters_0
       rect:
         serializedVersion: 2
         x: 12
         y: 19
         width: 301
-        height: 632
+        height: 650
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -107,13 +107,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: characters_idle_1
+      name: characters_1
       rect:
         serializedVersion: 2
         x: 323
         y: 19
         width: 316
-        height: 645
+        height: 663
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,13 +121,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: characters_idle_2
+      name: characters_2
       rect:
         serializedVersion: 2
         x: 644
         y: 19
         width: 339
-        height: 645
+        height: 663
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,13 +135,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: characters_idle_3
+      name: characters_3
       rect:
         serializedVersion: 2
         x: 999
         y: 17
         width: 302
-        height: 580
+        height: 598
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,13 +149,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: characters_idle_4
+      name: characters_4
       rect:
         serializedVersion: 2
         x: 1318
         y: 17
         width: 301
-        height: 626
+        height: 644
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,13 +163,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: characters_idle_5
+      name: characters_5
       rect:
         serializedVersion: 2
         x: 1635
         y: 17
         width: 301
-        height: 624
+        height: 642
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

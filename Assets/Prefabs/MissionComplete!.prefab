@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b72efae3ed6c94cad2655f79b9ea0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MissionCompletedSprite: {fileID: 21300000, guid: ca4fed71da18e9d4f897ff720c4b6740,
+  MissionCompletedSprite: {fileID: 21300000, guid: 4386ff799eea83f45999c089a20e2583,
     type: 3}
   targetScale: {x: 3, y: 3, z: 1}
   RevealCurve:

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Recruitable : Character, Interactable {
+    public string Role = "Developer";
     public bool Available = true;
     public Stats Attributes = new Stats();
     public void OnTouch(Touch t, Character actor)

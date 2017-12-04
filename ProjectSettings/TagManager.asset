@@ -8,6 +8,8 @@ TagManager:
   - NoButton
   - DialogPanel
   - Walls
+  - WorldCanvas
+  - ScreenCanvas
   layers:
   - Default
   - TransparentFX

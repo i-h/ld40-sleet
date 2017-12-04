@@ -28,6 +28,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1375854616906572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 224486629200287212}
+  - component: {fileID: 223141009067025572}
+  - component: {fileID: 114807450110865826}
+  - component: {fileID: 114009455571520130}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1837759960950104
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,7 +59,7 @@ GameObject:
   - component: {fileID: 114303323734396702}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: WorldCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,6 +73,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4626168946532678}
   - component: {fileID: 114958270002386692}
+  - component: {fileID: 114979626995250106}
+  - component: {fileID: 114057428786012176}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -87,9 +107,26 @@ Transform:
   m_Children:
   - {fileID: 224275551053058712}
   - {fileID: 4349743987482750}
+  - {fileID: 224486629200287212}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114009455571520130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375854616906572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &114040792487879006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,6 +141,29 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
+--- !u!114 &114057428786012176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847553871308784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef542801a95f85c49b04c8af52bdff49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GuideUI: {fileID: 0}
+  Hints:
+  - Key: hint_lvl1
+    Text: Before you can start spinning your own incubator, you need training! Pick
+      these students up and group them for the workstations!
+  - Key: hint_lvl2
+    Text: Alright, we're getting there. Let's get this jam going! Fill all the workstations
+      with developers!
+  - Key: hint_lvl3
+    Text: Now this is the real deal. Fill up workstations so developers can start
+      working on their games. When they're done, they'll move on and you can assemble
+      another team!
 --- !u!114 &114303323734396702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -150,6 +210,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 32
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!114 &114807450110865826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375854616906572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -175,12 +256,25 @@ MonoBehaviour:
     type: 2}
   TeamCompleted: {fileID: 114096927815740840, guid: b6fb262f0c6fb4e42bc54556a31168fd,
     type: 2}
---- !u!223 &223147804230684208
+  CompletionScore: 0
+  NextUnlock: 
+--- !u!114 &114979626995250106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847553871308784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436c45f1024ab0e4aad728af099903ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!223 &223141009067025572
 Canvas:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1837759960950104}
+  m_GameObject: {fileID: 1375854616906572}
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
@@ -195,6 +289,26 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!223 &223147804230684208
+Canvas:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1837759960950104}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 643890583
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!224 &224275551053058712
 RectTransform:
   m_ObjectHideFlags: 1
@@ -207,6 +321,24 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4626168946532678}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!224 &224486629200287212
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375854616906572}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4626168946532678}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

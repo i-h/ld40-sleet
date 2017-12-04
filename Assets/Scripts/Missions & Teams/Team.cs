@@ -7,6 +7,7 @@ public class Team : MonoBehaviour {
     public List<TeamSlot> TeamSlots;
     public TeamInfoPanel InfoPanelPrefab;
     public TeamInfoPanel InfoPanel;
+    public GameProduct GameProject;
 	// Use this for initialization
 	void Start () {
         TeamSlots.AddRange(GetComponentsInChildren<TeamSlot>());
@@ -32,6 +33,9 @@ public class Team : MonoBehaviour {
     public void FinishProject()
     {
         Debug.Log("Team will disband now");
+        _mm.ProjectFinished(this, GameProject);
+        GameProject = null;
+        InfoPanel.FinishDevelopment();
         ClearTeam();
     }
 

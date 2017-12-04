@@ -16,6 +16,7 @@ public class GameProduct : MonoBehaviour {
     public void StartDevelopment(Team team, Action onReady)
     {
         Debug.Log("Development requested: " + team.name);
+        team.GameProject = this;
         DevTeam = team;
         OnFinishedCallback = onReady;
         _totalStats = GetTotalStats();
