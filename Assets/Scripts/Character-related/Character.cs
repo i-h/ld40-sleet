@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,9 +27,17 @@ public class Character : MonoBehaviour, IFollowable
         SetNPC(IsNPC);
         _anim = GetComponent<Animator>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    public void Dispose()
+    {
+        Debug.Log(name + " is leaving.");
+        transform.parent = null;
+        //SetTarget((Vector2)transform.position + UnityEngine.Random.insideUnitCircle * 5);
+        Destroy(gameObject);
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (!_movementDisabled)
         {
             MoveTowardsTarget();

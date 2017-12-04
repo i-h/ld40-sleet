@@ -1,12 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MissionManager : MonoBehaviour {
+    public enum MissionMode { FillAll, Endless }
+    public MissionMode GameMode = MissionMode.FillAll;
     public MissionCompleted Completed;
     public MissionCompleted TeamCompleted;
     public static MissionManager Instance;
-    Dictionary<TeamArea, bool> TeamList = new Dictionary<TeamArea, bool>();
+    Dictionary<Team, bool> TeamList = new Dictionary<Team, bool>();
 	// Use this for initialization
 	void Awake () {
         if(Instance == null)
@@ -24,27 +27,42 @@ public class MissionManager : MonoBehaviour {
 		
 	}
 
-    public void ReportAvailableTeam(TeamArea team)
+    public void ReportAvailableTeam(Team team)
     {
         TeamList.Add(team, false);
     }
 
-    public void TeamFinished(TeamArea team)
+    public void TeamFinished(Team team)
     {
         TeamList[team] = true;
-        if(TeamCompleted!=null)
+        if (TeamCompleted != null)
+        {
             Instantiate(TeamCompleted, team.transform.position, Quaternion.identity);
+            if(GameMode == MissionMode.Endless)
+            {
+                OnTeamFinishedEndless(team);
+            }
+        }
         if(CheckUnfinishedTeams() == 0)
         {
             AllTeamsFinished();
         }
     }
 
+    private void OnTeamFinishedEndless(Team team)
+    {
+        GameProduct teamProduct = new GameObject().AddComponent<GameProduct>();
+        Transform pt = teamProduct.transform;
+        pt.parent = transform;
+        pt.name = "Generic Game Name";
+        teamProduct.StartDevelopment(team.FinishProject);
+    }
+
     int CheckUnfinishedTeams()
     {
         int unfinishedCount = 0;
 
-        foreach (TeamArea t in TeamList.Keys)
+        foreach (Team t in TeamList.Keys)
         {
             if (!TeamList[t]) unfinishedCount++;
         }
@@ -54,15 +72,18 @@ public class MissionManager : MonoBehaviour {
 
     void AllTeamsFinished()
     {
-        if(Completed != null)
+        if (GameMode == MissionMode.FillAll)
         {
-            Instantiate(Completed);
+            if (Completed != null)
+            {
+                Instantiate(Completed);
+            }
         }
     }
 
     public struct Objective
     {
-        public TeamArea Team;
+        public Team Team;
         public Recruitable.Stats RequiredTeamStats;
     }
 }

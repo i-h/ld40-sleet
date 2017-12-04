@@ -36,7 +36,7 @@ public class Player : MonoBehaviour {
         person.GetRigidbody().Sleep();
         _carried = person;
     }
-    public void PutDownCarried(TeamArea dest)
+    public void PutDownCarried(Team dest)
     {
         if (_carried != null)
         {

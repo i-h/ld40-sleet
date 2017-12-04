@@ -13,8 +13,4 @@ public class SceneSelectButton : MonoBehaviour {
     {
         SceneManager.LoadScene(Target);
     }
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
 }

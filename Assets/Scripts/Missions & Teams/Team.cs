@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeamArea : MonoBehaviour {
+public class Team : MonoBehaviour {
     private MissionManager _mm;
     public List<TeamSlot> TeamSlots;
 	// Use this for initialization
@@ -16,11 +16,21 @@ public class TeamArea : MonoBehaviour {
         }
         _mm.ReportAvailableTeam(this);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void FinishProject()
+    {
+        Debug.Log("Team will disband now");
+        ClearTeam();
+    }
+
+    void ClearTeam()
+    {
+        foreach(TeamSlot ts in TeamSlots)
+        {
+            ts.Person.Dispose();
+        }
+        TeamSlots.Clear();
+    }
 
     private void OnTriggerEnter2D(Collider2D c)
     {
