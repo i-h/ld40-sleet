@@ -229,6 +229,16 @@ Prefab:
       propertyPath: SortableTransform
       value: 
       objectReference: {fileID: 1776276956}
+    - target: {fileID: 114051667343419444, guid: cfc90bbccc577fb4ebf12dc029a426e7,
+        type: 2}
+      propertyPath: Attributes.SoundDesign
+      value: 255
+      objectReference: {fileID: 0}
+    - target: {fileID: 114051667343419444, guid: cfc90bbccc577fb4ebf12dc029a426e7,
+        type: 2}
+      propertyPath: Attributes.Leadership
+      value: 255
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cfc90bbccc577fb4ebf12dc029a426e7, type: 2}
   m_IsPrefabParent: 0

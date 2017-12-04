@@ -5,9 +5,21 @@ using UnityEngine;
 public class Team : MonoBehaviour {
     private MissionManager _mm;
     public List<TeamSlot> TeamSlots;
+    public TeamInfoPanel InfoPanelPrefab;
+    public TeamInfoPanel InfoPanel;
 	// Use this for initialization
 	void Start () {
         TeamSlots.AddRange(GetComponentsInChildren<TeamSlot>());
+
+        // Instantiate the info panel
+        GameObject co = GameObject.FindWithTag("WorldCanvas");
+        if(co != null && InfoPanelPrefab != null)
+        {
+            //Canvas c = co.GetComponent<Canvas>();
+            InfoPanel = Instantiate(InfoPanelPrefab, co.transform);
+            InfoPanel.AttachedTeam = this;
+            InfoPanel.Display();
+        }
         _mm = MissionManager.Instance;
         if(_mm == null)
         {
@@ -28,8 +40,9 @@ public class Team : MonoBehaviour {
         foreach(TeamSlot ts in TeamSlots)
         {
             ts.Person.Dispose();
+            ts.Person = null;
         }
-        TeamSlots.Clear();
+        if(InfoPanel != null) InfoPanel.UpdateDisplay();
     }
 
     private void OnTriggerEnter2D(Collider2D c)
@@ -56,10 +69,12 @@ public class Team : MonoBehaviour {
                 {
                     _mm.TeamFinished(this);
                 }
+                if (InfoPanel != null) InfoPanel.UpdateDisplay();
                 return true;
                 
             }
         }
+
 
         return false;
 

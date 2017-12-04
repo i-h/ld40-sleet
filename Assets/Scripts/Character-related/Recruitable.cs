@@ -25,14 +25,20 @@ public class Recruitable : Character, Interactable {
         plr.Recruit(this);        
     }
 
-    [Serializable]
-    public struct Stats
-    {
-        public byte Programming;
-        public byte GraphicDesign;
-        public byte GameDesign;
-        public byte SoundDesign;
-        public byte Social;
-        public byte Leadership;
-    }
+}
+[Serializable]
+public struct Stats
+{
+    [Range(0, 255)]
+    public int Programming;
+    [Range(0, 255)]
+    public int GraphicDesign;
+    [Range(0, 255)]
+    public int GameDesign;
+    [Range(0, 255)]
+    public int SoundDesign;
+    [Range(0, 255)]
+    public int Social;
+    [Range(0, 255)]
+    public int Leadership;
 }

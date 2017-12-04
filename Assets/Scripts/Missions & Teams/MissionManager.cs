@@ -55,7 +55,7 @@ public class MissionManager : MonoBehaviour {
         Transform pt = teamProduct.transform;
         pt.parent = transform;
         pt.name = "Generic Game Name";
-        teamProduct.StartDevelopment(team.FinishProject);
+        teamProduct.StartDevelopment(team, team.FinishProject);
     }
 
     int CheckUnfinishedTeams()
@@ -79,11 +79,5 @@ public class MissionManager : MonoBehaviour {
                 Instantiate(Completed);
             }
         }
-    }
-
-    public struct Objective
-    {
-        public Team Team;
-        public Recruitable.Stats RequiredTeamStats;
     }
 }
