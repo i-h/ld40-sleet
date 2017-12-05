@@ -32,7 +32,7 @@ public class Team : MonoBehaviour {
 
     public void FinishProject()
     {
-        Debug.Log("Team will disband now");
+        //Debug.Log("Team will disband now");
         _mm.ProjectFinished(this, GameProject);
         GameProject = null;
         InfoPanel.FinishDevelopment();

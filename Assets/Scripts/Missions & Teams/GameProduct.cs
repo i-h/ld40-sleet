@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameProduct : MonoBehaviour {
+    const float BASE_DEV_TIME = 15.0f;
+    const float SOCIAL_BONUS_PERCENT = 25.0f;
     public Team DevTeam;
     Stats _totalStats;
     Action OnFinishedCallback;
@@ -15,7 +17,6 @@ public class GameProduct : MonoBehaviour {
 	}
     public void StartDevelopment(Team team, Action onReady)
     {
-        Debug.Log("Development requested: " + team.name);
         team.GameProject = this;
         DevTeam = team;
         OnFinishedCallback = onReady;
@@ -28,6 +29,7 @@ public class GameProduct : MonoBehaviour {
     }
     IEnumerator DevelopmentCycle()
     {
+        Debug.Log("Game started with " + DevelopmentTime + " ("+_totalStats.Leadership+" leadership) with " + Quality + "% quality");
         float t = 0;
         while(Progress < 1.0)
         {
@@ -66,19 +68,19 @@ public class GameProduct : MonoBehaviour {
     float GetDevelopmentTime()
     {
         float leadership = _totalStats.Leadership;
-        float baseDuration = 20.0f;
+        float baseDuration = BASE_DEV_TIME;
         if(leadership > 255)
         {
-            return baseDuration + baseDuration * (1 - 1 / 1+(leadership-255));
+            return baseDuration + baseDuration * ((255/leadership/2)-1);
         } else
         {
-            return baseDuration * (1.2f - leadership/255);
+            return baseDuration + baseDuration * (1-leadership/255);
         }
     }
 
     float GetQuality()
     {
-        float socialBonus = 25.0f;
+        float socialBonus = SOCIAL_BONUS_PERCENT;
         float q = (_totalStats.Programming + _totalStats.GraphicDesign + _totalStats.GameDesign + _totalStats.SoundDesign) / 4 / 2.55f;
         q += (_totalStats.Social / DevTeam.TeamSlots.Count / 255 * socialBonus);
         return q;

@@ -30,7 +30,7 @@ public class Character : MonoBehaviour, IFollowable
 
     public void Dispose()
     {
-        Debug.Log(name + " is leaving.");
+        //Debug.Log(name + " is leaving.");
         transform.parent = null;
         //SetTarget((Vector2)transform.position + UnityEngine.Random.insideUnitCircle * 5);
         Destroy(gameObject);
