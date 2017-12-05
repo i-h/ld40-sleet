@@ -19,6 +19,10 @@ public class PlayerTouchController : MonoBehaviour {
         {
             ReadInput(Input.touches);
         }
+        if (Application.isEditor)
+        {
+            if(Input.GetMouseButton(0)) Controllable.SetTarget(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        }
 	}
     
 
